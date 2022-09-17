@@ -5,6 +5,9 @@ Created on Fri Sep 16 18:25:04 2022
 @author: Youssef
 """
 import re
+import datetime
+import  time
+
 
 def askforstr(message):
     mystr = input(message)
@@ -12,6 +15,15 @@ def askforstr(message):
         print("---- please provide suitable string ")
         return askforstr(message)
     return mystr
+def askfornum(message):
+    mynum = input(message)
+    try:
+        mynum = int(mynum)
+    except:
+        print("---- please provide number not a string ---- ")
+        return askfornum(message)
+    else:
+        return mynum
 
 def askforemail(message):
     email = input(message)
@@ -21,6 +33,15 @@ def askforemail(message):
     else:
         print("---- please enter a valid email")
         return askforemail(message)
+    
+def askfordate(message):
+    mydate = input(message)
+    regex= re.compile(r"^[0-3][0-9]/[0-3][0-9]/(?:[0-9][0-9])?[0-9][0-9]$")
+    if re.fullmatch(regex,mydate):
+        return mydate
+    else:
+        print("---- please enter a valid date dd/mm/yyyy")
+        return askfordate(message)
 
 def askforpassword(message):
     password = input(message)
@@ -44,7 +65,7 @@ def askforphone(message):
     else:
         print("---- please enter a valid phone")
         return askforphone(message)
-    
+
 def add_to_file(details,filepath):
     try:
         fileobj=open(filepath, "a")
@@ -58,10 +79,13 @@ def add_to_file(details,filepath):
 def readfile(filepath):
     try:
         fileobj = open(filepath)
-    except Exception as e:
+    except Exception:
         print("---- error happened while openeing the file .. try again ")
         return False
     else:
         allfile = fileobj.readlines()
         fileobj.close()
         return allfile
+def generate_new_id():
+    id = round(time.time())
+    return id

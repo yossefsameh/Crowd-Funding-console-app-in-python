@@ -6,7 +6,7 @@ Created on Fri Sep 16 18:17:51 2022
 """
 
 from operations import askforstr,askforemail,askforpassword,confirm_password,askforphone,add_to_file,readfile
-
+import functions
 def register():
     firstname=askforstr('Please enter your First Name: ')
     lastname=askforstr('Please enter your Last Name: ')
@@ -40,5 +40,27 @@ def login():
     print("wrong email or password ")
     return False
 
-def menu(usremail):
-    print(usremail)
+def menu(usremail):    
+    while True:
+        choice= input("1-Creat new project, \n2-list projects,\n3-edit prohect, \n4-delete project,\n6-back to main menu \n")
+        if choice =="1":
+            functions.createpro(usremail)
+        elif choice =="2":
+            functions.listpro()
+        elif choice =="3":
+            pass
+        elif choice =="4":
+            pass
+        elif choice =="5":
+            pass
+        elif choice=="6":
+            break
+        else:
+            print("---- no correct choice ----")
+            return menu()
+        
+        
+        
+        
+        
+        
