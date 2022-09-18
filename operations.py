@@ -25,6 +25,22 @@ def askfornum(message):
     else:
         return mynum
 
+def askforemail_pk(message):
+    email = input(message)
+    regex= re.compile(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)")
+    if re.fullmatch(regex,email):
+        allusers=readfile('users.txt')
+        for user in allusers:
+            curruser = user.strip("\n")
+            curruser = curruser.split(":")
+            if curruser[2]==email:
+                print('Repeated email')
+                return askforemail_pk(message)
+        return email
+    else:
+        print("---- please enter a valid email")
+        return askforemail_pk(message)
+    
 def askforemail(message):
     email = input(message)
     regex= re.compile(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)")

@@ -5,12 +5,12 @@ Created on Fri Sep 16 18:17:51 2022
 @author: Youssef
 """
 
-from operations import askforstr,askforemail,askforpassword,confirm_password,askforphone,add_to_file,readfile
+from operations import askforstr,askforemail_pk,askforemail,askforpassword,confirm_password,askforphone,add_to_file,readfile
 import functions
 def register():
     firstname=askforstr('Please enter your First Name: ')
     lastname=askforstr('Please enter your Last Name: ')
-    email=askforemail('Please enter your email: ')
+    email=askforemail_pk('Please enter your email: ')
     password=askforpassword('Please enter a password: ')
     confirmed_password=confirm_password(password)
     phone=askforphone('Please enter your phone number: +2')

@@ -4,7 +4,7 @@ Created on Sat Sep 17 20:09:26 2022
 
 @author: Youssef
 """
-from operations import askforstr,askfornum,askfordate,add_to_file,generate_new_id
+from operations import askforstr,askfornum,askfordate,add_to_file,generate_new_id,readfile
 
 
 def createpro(usremail):
@@ -34,7 +34,13 @@ def createpro(usremail):
         return createpro()
     
 def listpro():
-    pass
+    allpro =readfile('projects.txt')
+    if allpro==False:
+        print('-----------no available projects ------ ')
+    else:
+        #for pro in allpro:
+            #currpro = pro.strip("\n")
+        print(allpro)
 
 
 
