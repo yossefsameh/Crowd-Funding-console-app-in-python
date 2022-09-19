@@ -86,12 +86,22 @@ def add_to_file(details,filepath):
     try:
         fileobj=open(filepath, "a")
     except:
-        print("----- issue while registration ")
+        print("----- issue ")
         return False
     else:
         fileobj.write(f"{details}\n")
         return True
-
+def overwrite_file(details,filepath):
+    try:
+     fileobj = open(filepath, "w")
+    except:
+        print('issue')
+        return False
+    else:
+        fileobj.writelines(details)
+        fileobj.close()
+        return True
+    
 def readfile(filepath):
     try:
         fileobj = open(filepath)
@@ -105,3 +115,18 @@ def readfile(filepath):
 def generate_new_id():
     id = round(time.time())
     return id
+
+#def delete_pro_from_file(book_id):
+    #pass
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

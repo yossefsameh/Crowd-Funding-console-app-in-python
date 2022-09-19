@@ -48,16 +48,16 @@ def menu(usremail):
         elif choice =="2":
             functions.listpro()
         elif choice =="3":
-            pass
+            functions.editpro(usremail)
         elif choice =="4":
-            pass
+            functions.deletepro(usremail)
         elif choice =="5":
             pass
         elif choice=="6":
             break
         else:
             print("---- no correct choice ----")
-            return menu()
+            return menu(usremail)
         
         
         
