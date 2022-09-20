@@ -1,3 +1,4 @@
 yossef:sameh:yossef@gmail.com:12345678:01123152394
 omar:mohamed:omar@gmail.com:87654321:01112122312
 galal:shokry:galal@gmail.com:00000000:01111112233
+ali:maalol:ali@gmail.com:55555555:01055555555

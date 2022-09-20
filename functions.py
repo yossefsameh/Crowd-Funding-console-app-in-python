@@ -99,5 +99,37 @@ def editpro(usremail):
     print("project not found ")
     return False
 
-
+def searchbydate():
+    choice= input("1-search by start date, \n2-list end date \n") 
+    if choice =="1":
+        indate=askfordate('Please enter start date you want to search by: ')
+    elif choice =="2":
+        indate=askfordate('Please enter end date you want to search by: ')
+    else:
+        print('wrong input')
+        return False    
+    allpro=readfile('projects.txt')
+    for pro in allpro:
+        mypro = pro.strip("\n")
+        mypro = mypro.split(":")
+        if choice== "1":
+            if mypro[4]==str(indate):
+                print(mypro,'\n')
+        elif choice=="2":
+            if mypro[5]==str(indate):
+                print(mypro,'\n')
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 

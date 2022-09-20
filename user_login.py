@@ -42,7 +42,7 @@ def login():
 
 def menu(usremail):    
     while True:
-        choice= input("1-Creat new project, \n2-list projects,\n3-edit prohect, \n4-delete project,\n6-back to main menu \n")
+        choice= input("1-Creat new project, \n2-list projects,\n3-edit prohect, \n4-delete project, \n5-search by date \n6-back to main menu \n")
         if choice =="1":
             functions.createpro(usremail)
         elif choice =="2":
@@ -52,7 +52,7 @@ def menu(usremail):
         elif choice =="4":
             functions.deletepro(usremail)
         elif choice =="5":
-            pass
+            functions.searchbydate()
         elif choice=="6":
             break
         else:
